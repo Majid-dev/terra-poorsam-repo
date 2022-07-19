@@ -14,6 +14,7 @@
 # in backend.tf.
 variable "server_name" {
   type = string
+  default = "Primary load balancer"
 }
 
 resource "fakewebservices_vpc" "primary_vpc" {
