@@ -12,7 +12,9 @@
 #
 # If you're looking for the configuration for the remote backend, you can find that
 # in backend.tf.
-
+variable "server_name" {
+  type = "string"
+}
 
 resource "fakewebservices_vpc" "primary_vpc" {
   name       = "Primary VPC"
@@ -28,7 +30,7 @@ resource "fakewebservices_server" "servers" {
 }
 
 resource "fakewebservices_load_balancer" "primary_lb" {
-  name    = "Primary Load Balancer"
+  name    = var.server_name
   servers = fakewebservices_server.servers[*].name
 }
 
