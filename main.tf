@@ -13,7 +13,7 @@
 # If you're looking for the configuration for the remote backend, you can find that
 # in backend.tf.
 variable "server_name" {
-  type = "string"
+  type = string
 }
 
 resource "fakewebservices_vpc" "primary_vpc" {
